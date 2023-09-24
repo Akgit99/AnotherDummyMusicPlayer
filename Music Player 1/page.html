@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- navigation -->
+    <header>
+        <nav class="navbar navbar-expand-md d-flex justify-content-end" data-bs-theme="dark" id="navigation-style">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="Images/playerImage.png" alt="music-player-logo" id="logo-image"></a>
+                <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+   <!-- for nice breakpoint -->
+                <div class="d-flex align-items-center d-md-none">
+                    <div class="mx-3">
+                        <div class="position-relative text-light " id="bell-icon">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                   <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                               </svg>
+                           <div class="position-absolute top-0 start-50 p-1 bg-danger border border-light rounded-circle red-alert" id="alert-dot">
+                               <span class="visually-hidden">New alerts</span>
+                            </div>
+                        </div>      
+                     </div> 
+                   
+                       <div>
+                           <img src="https://yt3.googleusercontent.com/NzgWbFspgbM0D8pGL8aqafSDtHO9aSt79kbDXwS8yy3rEMMz93vnLSEaDfgPciVKAzOYy0Dx=s900-c-k-c0x00ffffff-no-rj" alt="profile pic" id="profile-pic">
+                       </div>
+                </div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Favourites</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Albums</a>
+                  </li>
+                  <li class="nav-item d-lg-none">
+                    <a class="nav-link " href="#">Queue</a>
+                  </li>
+                </ul>
+                  
+                <!-- search area -->
+                    <form>
+                      <div class="input-group ">
+                        <button type="button" class="btn input-group-text search-area-style"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg></button>
+                        
+                          <input type="search" class="form-control search-area-style" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                          
+                          <button type="button" class="btn input-group-text search-area-style"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic-fill" viewBox="0 0 16 16">
+                            <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"/>
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+                          </svg></button>
+                      </div>
+                    </form>
+              </div>
+
+              <!-- alert and profile pic -->
+                <div class="d-none d-md-flex align-items-center">
+                  <div class="mx-3">
+                       <div class="position-relative text-light " id="bell-icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                               <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                           </svg>
+                            <div class="position-absolute top-0 start-50 p-1 bg-danger border border-light rounded-circle red-alert" id="alert-dot">
+                                <span class="visually-hidden">New alerts</span>
+                           </div>
+                       </div>      
+                   </div> 
+               
+                   <div>
+                       <img src="https://yt3.googleusercontent.com/NzgWbFspgbM0D8pGL8aqafSDtHO9aSt79kbDXwS8yy3rEMMz93vnLSEaDfgPciVKAzOYy0Dx=s900-c-k-c0x00ffffff-no-rj" alt="profile pic" id="profile-pic">
+                   </div>
+                </div>
+            </div> 
+          </nav>
+    </header>
+
+    <main>
+
+        <div class="container-fluid" id="main-container">
+            <div class="row">
+              <div class="col-sm col-md-8">
+                <div class="card mb-3 coldplay-card text-light">
+                    <div class="row g-0">
+                      <div class="col-4">
+                        <img src="Images/coldplay-pic.jpg" class="img-fluid rounded-start" alt="coldplay">
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body">
+                          <h5 class="card-title fs-4">Coldplay</h5>
+                          <small>British Band</small>
+                          <p class="card-text"><small>Coldplay are a British rock band formed in London in 1997. They consist of vocalist and pianist Chris Martin, guitarist Jonny Buckland, bassist Guy Berryman, drummer Will Champion and creative director Phil Harvey. They met at University College London, initially calling themselves Big Fat Noises and changing to Starfish, before the current name.</small></p>
+                          <button class="px-5 py-2 fw-bold btn btn-primary">Play All</button>
+                          <button class="btn btn-light">Follow</button>
+                          <p class="card-text"><small>247 Tracks | 128 Albums</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- side section songs -->
+                  <div class="text-light d-flex flex-column">
+                
+                    <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                      <!-- bottom player initiater -->
+                      <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                        <img src="Images/speaknow-cover.jpg" alt="1989-cover">
+                        <div class="play-icon">
+                          <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column special-box ms-2">
+                        <div class="song-title fw-bold"><p>Enchanted (Taylor's Version)</p>
+                        </div>
+                        <div class="song-artist"><small>Taylor Swift</small>
+                        </div>
+                      </div>
+  
+                      <div class="d-flex flex-column align-items-center ms-auto">
+                        <div class="dropdown">
+                          <!-- queue dropdown button -->
+                          <button type="button" class="btn"  data-bs-toggle="dropdown">
+                            <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                          </button>
+                          <!-- queue dropdown menu -->
+                          <ul class="dropdown-menu bg-primary text-light">
+                            <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                            </a></li>
+                            <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                            <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                          </ul>
+                        </div>
+                        <div><i class="bi bi-plus-lg"></i></div>
+                      </div>
+  
+                    </div>
+                    <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                      <!-- bottom player initiater -->
+                      <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                        <img src="Images/mos-cover.jpg" alt="1989-cover">
+                        <div class="play-icon">
+                          <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column special-box ms-2">
+                        <div class="song-title fw-bold"><p>Higher Power</p>
+                        </div>
+                        <div class="song-artist"><small>Coldplay</small>
+                        </div>
+                      </div>
+  
+                      <div class="d-flex flex-column align-items-center ms-auto">
+                        <div class="dropdown">
+                          <!-- queue dropdown button -->
+                          <button type="button" class="btn"  data-bs-toggle="dropdown">
+                            <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                          </button>
+                          <!-- queue dropdown menu -->
+                          <ul class="dropdown-menu bg-primary text-light">
+                            <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                            </a></li>
+                            <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                            <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                          </ul>
+                        </div>
+                        <div><i class="bi bi-plus-lg"></i></div>
+                      </div>
+                      </div>
+                      <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                        <!-- bottom player initiater -->
+                        <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                          <img src="Images/prism-cover.jpg" alt="prism">
+                          <div class="play-icon">
+                            <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column special-box ms-2">
+                          <div class="song-title fw-bold"><p>Roar</p>
+                          </div>
+                          <div class="song-artist"><small>Katy Perry</small>
+                          </div>
+                        </div>
+    
+                        <div class="d-flex flex-column align-items-center ms-auto">
+                          <div class="dropdown">
+                            <!-- queue dropdown button -->
+                            <button type="button" class="btn"  data-bs-toggle="dropdown">
+                              <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                            </button>
+                            <!-- queue dropdown menu -->
+                            <ul class="dropdown-menu bg-primary text-light">
+                              <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                              </a></li>
+                              <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                              <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                            </ul>
+                          </div>
+                          <div><i class="bi bi-plus-lg"></i></div>
+                        </div>
+                        </div>
+                        <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                          <!-- bottom player initiater -->
+                          <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                            <img src="Images/native-cover.jpg" alt="native">
+                            <div class="play-icon">
+                              <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column special-box ms-2">
+                            <div class="song-title fw-bold"><p>Counting Stars</p>
+                            </div>
+                            <div class="song-artist"><small>OneRepublic</small>
+                            </div>
+                          </div>
+      
+                          <div class="d-flex flex-column align-items-center ms-auto">
+                            <div class="dropdown">
+                              <!-- queue dropdown button -->
+                              <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                              </button>
+                              <!-- queue dropdown menu -->
+                              <ul class="dropdown-menu bg-primary text-light">
+                                <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                </a></li>
+                                <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                              </ul>
+                            </div>
+                            <div><i class="bi bi-plus-lg"></i></div>
+                          </div>
+                          </div>
+                          <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                            <!-- bottom player initiater -->
+                            <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                              <img src="Images/melodrama-cover.jpg" alt="native">
+                              <div class="play-icon">
+                                <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                              </div>
+                            </div>
+                            <div class="d-flex flex-column special-box ms-2">
+                              <div class="song-title fw-bold"><p>Green Light</p>
+                              </div>
+                              <div class="song-artist"><small>Lorde</small>
+                              </div>
+                            </div>
+        
+                            <div class="d-flex flex-column align-items-center ms-auto">
+                              <div class="dropdown">
+                                <!-- queue dropdown button -->
+                                <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                  <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                </button>
+                                <!-- queue dropdown menu -->
+                                <ul class="dropdown-menu bg-primary text-light">
+                                  <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                  </a></li>
+                                  <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                  <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                </ul>
+                              </div>
+                              <div><i class="bi bi-plus-lg"></i></div>
+                            </div>
+                            </div>
+                            <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                <!-- bottom player initiater -->
+                                <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                  <img src="Images/speaknow-cover.jpg" alt="1989-cover">
+                                  <div class="play-icon">
+                                    <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-column special-box ms-2">
+                                  <div class="song-title fw-bold"><p>Enchanted (Taylor's Version)</p>
+                                  </div>
+                                  <div class="song-artist"><small>Taylor Swift</small>
+                                  </div>
+                                </div>
+            
+                                <div class="d-flex flex-column align-items-center ms-auto">
+                                  <div class="dropdown">
+                                    <!-- queue dropdown button -->
+                                    <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                      <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                    </button>
+                                    <!-- queue dropdown menu -->
+                                    <ul class="dropdown-menu bg-primary text-light">
+                                      <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                      </a></li>
+                                      <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                      <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                    </ul>
+                                  </div>
+                                  <div><i class="bi bi-plus-lg"></i></div>
+                                </div>
+            
+                              </div>
+                              <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                <!-- bottom player initiater -->
+                                <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                  <img src="Images/mos-cover.jpg" alt="1989-cover">
+                                  <div class="play-icon">
+                                    <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-column special-box ms-2">
+                                  <div class="song-title fw-bold"><p>Higher Power</p>
+                                  </div>
+                                  <div class="song-artist"><small>Coldplay</small>
+                                  </div>
+                                </div>
+            
+                                <div class="d-flex flex-column align-items-center ms-auto">
+                                  <div class="dropdown">
+                                    <!-- queue dropdown button -->
+                                    <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                      <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                    </button>
+                                    <!-- queue dropdown menu -->
+                                    <ul class="dropdown-menu bg-primary text-light">
+                                      <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                      </a></li>
+                                      <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                      <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                    </ul>
+                                  </div>
+                                  <div><i class="bi bi-plus-lg"></i></div>
+                                </div>
+                                </div>
+                                <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                  <!-- bottom player initiater -->
+                                  <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                    <img src="Images/prism-cover.jpg" alt="prism">
+                                    <div class="play-icon">
+                                      <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column special-box ms-2">
+                                    <div class="song-title fw-bold"><p>Roar</p>
+                                    </div>
+                                    <div class="song-artist"><small>Katy Perry</small>
+                                    </div>
+                                  </div>
+              
+                                  <div class="d-flex flex-column align-items-center ms-auto">
+                                    <div class="dropdown">
+                                      <!-- queue dropdown button -->
+                                      <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                        <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                      </button>
+                                      <!-- queue dropdown menu -->
+                                      <ul class="dropdown-menu bg-primary text-light">
+                                        <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                        </a></li>
+                                        <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                        <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                      </ul>
+                                    </div>
+                                    <div><i class="bi bi-plus-lg"></i></div>
+                                  </div>
+                                  </div>
+                                  <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                    <!-- bottom player initiater -->
+                                    <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                      <img src="Images/native-cover.jpg" alt="native">
+                                      <div class="play-icon">
+                                        <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                      </div>
+                                    </div>
+                                    <div class="d-flex flex-column special-box ms-2">
+                                      <div class="song-title fw-bold"><p>Counting Stars</p>
+                                      </div>
+                                      <div class="song-artist"><small>OneRepublic</small>
+                                      </div>
+                                    </div>
+                
+                                    <div class="d-flex flex-column align-items-center ms-auto">
+                                      <div class="dropdown">
+                                        <!-- queue dropdown button -->
+                                        <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                          <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                        </button>
+                                        <!-- queue dropdown menu -->
+                                        <ul class="dropdown-menu bg-primary text-light">
+                                          <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                          </a></li>
+                                          <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                          <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                        </ul>
+                                      </div>
+                                      <div><i class="bi bi-plus-lg"></i></div>
+                                    </div>
+                                    </div>
+                                    <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                      <!-- bottom player initiater -->
+                                      <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                        <img src="Images/melodrama-cover.jpg" alt="native">
+                                        <div class="play-icon">
+                                          <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex flex-column special-box ms-2">
+                                        <div class="song-title fw-bold"><p>Green Light</p>
+                                        </div>
+                                        <div class="song-artist"><small>Lorde</small>
+                                        </div>
+                                      </div>
+                  
+                                      <div class="d-flex flex-column align-items-center ms-auto">
+                                        <div class="dropdown">
+                                          <!-- queue dropdown button -->
+                                          <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                            <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                          </button>
+                                          <!-- queue dropdown menu -->
+                                          <ul class="dropdown-menu bg-primary text-light">
+                                            <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                            </a></li>
+                                            <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                            <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                          </ul>
+                                        </div>
+                                        <div><i class="bi bi-plus-lg"></i></div>
+                                      </div>
+                                      </div>
+                                      <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                        <!-- bottom player initiater -->
+                                        <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                          <img src="Images/speaknow-cover.jpg" alt="1989-cover">
+                                          <div class="play-icon">
+                                            <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex flex-column special-box ms-2">
+                                          <div class="song-title fw-bold"><p>Enchanted (Taylor's Version)</p>
+                                          </div>
+                                          <div class="song-artist"><small>Taylor Swift</small>
+                                          </div>
+                                        </div>
+                    
+                                        <div class="d-flex flex-column align-items-center ms-auto">
+                                          <div class="dropdown">
+                                            <!-- queue dropdown button -->
+                                            <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                              <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                            </button>
+                                            <!-- queue dropdown menu -->
+                                            <ul class="dropdown-menu bg-primary text-light">
+                                              <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                              </a></li>
+                                              <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                              <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                            </ul>
+                                          </div>
+                                          <div><i class="bi bi-plus-lg"></i></div>
+                                        </div>
+                    
+                                      </div>
+                                      <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                        <!-- bottom player initiater -->
+                                        <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                          <img src="Images/mos-cover.jpg" alt="1989-cover">
+                                          <div class="play-icon">
+                                            <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex flex-column special-box ms-2">
+                                          <div class="song-title fw-bold"><p>Higher Power</p>
+                                          </div>
+                                          <div class="song-artist"><small>Coldplay</small>
+                                          </div>
+                                        </div>
+                    
+                                        <div class="d-flex flex-column align-items-center ms-auto">
+                                          <div class="dropdown">
+                                            <!-- queue dropdown button -->
+                                            <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                              <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                            </button>
+                                            <!-- queue dropdown menu -->
+                                            <ul class="dropdown-menu bg-primary text-light">
+                                              <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                              </a></li>
+                                              <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                              <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                            </ul>
+                                          </div>
+                                          <div><i class="bi bi-plus-lg"></i></div>
+                                        </div>
+                                        </div>
+                                        <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                          <!-- bottom player initiater -->
+                                          <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                            <img src="Images/prism-cover.jpg" alt="prism">
+                                            <div class="play-icon">
+                                              <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                            </div>
+                                          </div>
+                                          <div class="d-flex flex-column special-box ms-2">
+                                            <div class="song-title fw-bold"><p>Roar</p>
+                                            </div>
+                                            <div class="song-artist"><small>Katy Perry</small>
+                                            </div>
+                                          </div>
+                      
+                                          <div class="d-flex flex-column align-items-center ms-auto">
+                                            <div class="dropdown">
+                                              <!-- queue dropdown button -->
+                                              <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                                <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                              </button>
+                                              <!-- queue dropdown menu -->
+                                              <ul class="dropdown-menu bg-primary text-light">
+                                                <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                                </a></li>
+                                                <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                                <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                              </ul>
+                                            </div>
+                                            <div><i class="bi bi-plus-lg"></i></div>
+                                          </div>
+                                          </div>
+                                          <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                            <!-- bottom player initiater -->
+                                            <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                              <img src="Images/native-cover.jpg" alt="native">
+                                              <div class="play-icon">
+                                                <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                              </div>
+                                            </div>
+                                            <div class="d-flex flex-column special-box ms-2">
+                                              <div class="song-title fw-bold"><p>Counting Stars</p>
+                                              </div>
+                                              <div class="song-artist"><small>OneRepublic</small>
+                                              </div>
+                                            </div>
+                        
+                                            <div class="d-flex flex-column align-items-center ms-auto">
+                                              <div class="dropdown">
+                                                <!-- queue dropdown button -->
+                                                <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                                  <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                                </button>
+                                                <!-- queue dropdown menu -->
+                                                <ul class="dropdown-menu bg-primary text-light">
+                                                  <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                                  </a></li>
+                                                  <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                                  <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                                </ul>
+                                              </div>
+                                              <div><i class="bi bi-plus-lg"></i></div>
+                                            </div>
+                                            </div>
+                                            <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                              <!-- bottom player initiater -->
+                                              <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                                <img src="Images/melodrama-cover.jpg" alt="native">
+                                                <div class="play-icon">
+                                                  <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                                </div>
+                                              </div>
+                                              <div class="d-flex flex-column special-box ms-2">
+                                                <div class="song-title fw-bold"><p>Green Light</p>
+                                                </div>
+                                                <div class="song-artist"><small>Lorde</small>
+                                                </div>
+                                              </div>
+                          
+                                              <div class="d-flex flex-column align-items-center ms-auto">
+                                                <div class="dropdown">
+                                                  <!-- queue dropdown button -->
+                                                  <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                                    <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                                  </button>
+                                                  <!-- queue dropdown menu -->
+                                                  <ul class="dropdown-menu bg-primary text-light">
+                                                    <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                                    </a></li>
+                                                    <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                                    <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                                  </ul>
+                                                </div>
+                                                <div><i class="bi bi-plus-lg"></i></div>
+                                              </div>
+                                              </div>
+                                              <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                                <!-- bottom player initiater -->
+                                                <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                                  <img src="Images/speaknow-cover.jpg" alt="1989-cover">
+                                                  <div class="play-icon">
+                                                    <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                                  </div>
+                                                </div>
+                                                <div class="d-flex flex-column special-box ms-2">
+                                                  <div class="song-title fw-bold"><p>Enchanted (Taylor's Version)</p>
+                                                  </div>
+                                                  <div class="song-artist"><small>Taylor Swift</small>
+                                                  </div>
+                                                </div>
+                            
+                                                <div class="d-flex flex-column align-items-center ms-auto">
+                                                  <div class="dropdown">
+                                                    <!-- queue dropdown button -->
+                                                    <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                                      <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                                    </button>
+                                                    <!-- queue dropdown menu -->
+                                                    <ul class="dropdown-menu bg-primary text-light">
+                                                      <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                                      </a></li>
+                                                      <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                                      <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                                    </ul>
+                                                  </div>
+                                                  <div><i class="bi bi-plus-lg"></i></div>
+                                                </div>
+                            
+                                              </div>
+                                              <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                                <!-- bottom player initiater -->
+                                                <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                                  <img src="Images/mos-cover.jpg" alt="1989-cover">
+                                                  <div class="play-icon">
+                                                    <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                                  </div>
+                                                </div>
+                                                <div class="d-flex flex-column special-box ms-2">
+                                                  <div class="song-title fw-bold"><p>Higher Power</p>
+                                                  </div>
+                                                  <div class="song-artist"><small>Coldplay</small>
+                                                  </div>
+                                                </div>
+                            
+                                                <div class="d-flex flex-column align-items-center ms-auto">
+                                                  <div class="dropdown">
+                                                    <!-- queue dropdown button -->
+                                                    <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                                      <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                                    </button>
+                                                    <!-- queue dropdown menu -->
+                                                    <ul class="dropdown-menu bg-primary text-light">
+                                                      <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                                      </a></li>
+                                                      <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                                      <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                                    </ul>
+                                                  </div>
+                                                  <div><i class="bi bi-plus-lg"></i></div>
+                                                </div>
+                                                </div>
+                                                <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                                  <!-- bottom player initiater -->
+                                                  <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                                    <img src="Images/prism-cover.jpg" alt="prism">
+                                                    <div class="play-icon">
+                                                      <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                                    </div>
+                                                  </div>
+                                                  <div class="d-flex flex-column special-box ms-2">
+                                                    <div class="song-title fw-bold"><p>Roar</p>
+                                                    </div>
+                                                    <div class="song-artist"><small>Katy Perry</small>
+                                                    </div>
+                                                  </div>
+                              
+                                                  <div class="d-flex flex-column align-items-center ms-auto">
+                                                    <div class="dropdown">
+                                                      <!-- queue dropdown button -->
+                                                      <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                                        <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                                      </button>
+                                                      <!-- queue dropdown menu -->
+                                                      <ul class="dropdown-menu bg-primary text-light">
+                                                        <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                                        </a></li>
+                                                        <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                                        <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                                      </ul>
+                                                    </div>
+                                                    <div><i class="bi bi-plus-lg"></i></div>
+                                                  </div>
+                                                  </div>
+                                                  <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                                    <!-- bottom player initiater -->
+                                                    <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                                      <img src="Images/native-cover.jpg" alt="native">
+                                                      <div class="play-icon">
+                                                        <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                                      </div>
+                                                    </div>
+                                                    <div class="d-flex flex-column special-box ms-2">
+                                                      <div class="song-title fw-bold"><p>Counting Stars</p>
+                                                      </div>
+                                                      <div class="song-artist"><small>OneRepublic</small>
+                                                      </div>
+                                                    </div>
+                                
+                                                    <div class="d-flex flex-column align-items-center ms-auto">
+                                                      <div class="dropdown">
+                                                        <!-- queue dropdown button -->
+                                                        <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                                          <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                                        </button>
+                                                        <!-- queue dropdown menu -->
+                                                        <ul class="dropdown-menu bg-primary text-light">
+                                                          <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                                          </a></li>
+                                                          <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                                          <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                                        </ul>
+                                                      </div>
+                                                      <div><i class="bi bi-plus-lg"></i></div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="py-2 px-3 d-flex align-items-center latest-release left-section-style my-1">
+                                                      <!-- bottom player initiater -->
+                                                      <div class="play-on-hover" data-bs-toggle="collapse" href="#bottom-player" aria-expanded="false" aria-controls="collapseExample">
+                                                        <img src="Images/melodrama-cover.jpg" alt="native">
+                                                        <div class="play-icon">
+                                                          <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                                                        </div>
+                                                      </div>
+                                                      <div class="d-flex flex-column special-box ms-2">
+                                                        <div class="song-title fw-bold"><p>Green Light</p>
+                                                        </div>
+                                                        <div class="song-artist"><small>Lorde</small>
+                                                        </div>
+                                                      </div>
+                                  
+                                                      <div class="d-flex flex-column align-items-center ms-auto">
+                                                        <div class="dropdown">
+                                                          <!-- queue dropdown button -->
+                                                          <button type="button" class="btn"  data-bs-toggle="dropdown">
+                                                            <span class="text-light"><i class="bi bi-three-dots"></i></span>
+                                                          </button>
+                                                          <!-- queue dropdown menu -->
+                                                          <ul class="dropdown-menu bg-primary text-light">
+                                                            <li><a class="dropdown-item fw-bold border-bottom" href="#"> <span class="pe-2"><i class="bi bi-play-fill"></i></span>Play Now
+                                                            </a></li>
+                                                            <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-plus-lg"></i></span>Favourite songs</a></li>
+                                                            <li><a class="dropdown-item fw-bold" href="#"><span class="pe-2"><i class="bi bi-info-circle-fill"></i></span>Get info</a></li>
+                                                          </ul>
+                                                        </div>
+                                                        <div><i class="bi bi-plus-lg"></i></div>
+                                                      </div>
+                                                      </div>
+                    </div>
+                </div>
+                    
+                       
+            </div>
+        </div>
+        
+
+
+
+
+        <!-- aside queue -->
+        <div class="d-none d-md-block col-4 queue-over" >
+            <div class="vstack gap-1 text-light me-2">
+              <div class="d-flex justify-content-between py-2">
+                <div class="fw-bold fs-2"><h4>Similar Artists</h4></div>
+                <!-- queue dropdown -->
+              <div class="dropdown">
+                <!-- queue dropdown button -->
+                <button type="button" class="btn"   data-bs-toggle="dropdown">
+                  <span class="text-primary fw-bold">queue</span>
+                  <span class="text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                  </svg></span>
+                </button>
+                <!-- queue dropdown menu -->
+                <ul class="dropdown-menu bg-primary text-light">
+                  <li><a class="dropdown-item fw-bold border-bottom" href="#">Playlists</a></li>
+                  <li><a class="dropdown-item fw-bold" href="#">Favourite songs</a></li>
+                </ul>
+              </div>
+              </div>
+              <div class="py-3 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-cover me-2"><img src="Images/1989-cover.jpg" alt="1989-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Taylor Swift</p>
+                  </div>
+                  <div class="song-artist"><small>Solo Artist</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:52</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-3 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-cover me-2"><img src="Images/native-cover.jpg" alt="native-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>OneRepublic</p>
+                  </div>
+                  <div class="song-artist"><small>Pop Band</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>4:17</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-3 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-cover me-2"><img src="Images/lover-cover.jpg" alt="lover-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Taylor Swift</p>
+                  </div>
+                  <div class="song-artist"><small>Solo Artist</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>2:58</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <div class="fw-bold fs-2"><h4>Recently Added</h4></div>
+                 <!-- queue dropdown -->
+              <div class="dropdown">
+                <!-- queue dropdown button -->
+                <button type="button" class="btn"   data-bs-toggle="dropdown">
+                  <span class="text-primary fw-bold">queue</span>
+                  <span class="text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                  </svg></span>
+                </button>
+                <!-- queue dropdown menu -->
+                <ul class="dropdown-menu bg-primary text-light">
+                  <li><a class="dropdown-item fw-bold border-bottom" href="#">Playlists</a></li>
+                  <li><a class="dropdown-item fw-bold" href="#">Favourite songs</a></li>
+                </ul>
+              </div>
+              </div>
+
+
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>04</small></div>
+                <div class="song-cover me-2"><img src="Images/prism-cover.jpg" alt="prism-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Roar</p>
+                  </div>
+                  <div class="song-artist"><small>Katy Perry</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:44</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>05</small></div>
+                <div class="song-cover me-2"><img src="Images/folklore-cover.jpg" alt="folklore-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Cardigan</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>4:00</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>06</small></div>
+                <div class="song-cover me-2"><img src="Images/melodrama-cover.jpg" alt="melodrama-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Green Light</p>
+                  </div>
+                  <div class="song-artist"><small>Lorde</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:55</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>07</small></div>
+                <div class="song-cover me-2"><img src="Images/mos-cover.jpg" alt="mos-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Higher Power</p>
+                  </div>
+                  <div class="song-artist"><small>Coldplay</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:27</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>08</small></div>
+                <div class="song-cover me-2"><img src="Images/speaknow-cover.jpg" alt="speak-now(taylor's version)" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Mean (Taylor's version)</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:59</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>09</small></div>
+                <div class="song-cover me-2"><img src="Images/reputation-cover.jpg" alt="reputaion-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Getaway Car</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:54</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>10</small></div>
+                <div class="song-cover me-2"><img src="Images/1989-cover.jpg" alt="1989-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Style</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:52</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>11</small></div>
+                <div class="song-cover me-2"><img src="Images/1989-cover.jpg" alt="1989-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Style</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:52</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>12</small></div>
+                <div class="song-cover me-2"><img src="Images/native-cover.jpg" alt="native-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Counting Stars</p>
+                  </div>
+                  <div class="song-artist"><small>OneRepublic</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>4:17</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>13</small></div>
+                <div class="song-cover me-2"><img src="Images/lover-cover.jpg" alt="lover-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Paper Rings</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>2:58</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>14</small></div>
+                <div class="song-cover me-2"><img src="Images/prism-cover.jpg" alt="prism-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Dark Horse</p>
+                  </div>
+                  <div class="song-artist"><small>Katy Perry</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:44</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>15</small></div>
+                <div class="song-cover me-2"><img src="Images/folklore-cover.jpg" alt="folklore-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>August</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>4:00</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>16</small></div>
+                <div class="song-cover me-2"><img src="Images/melodrama-cover.jpg" alt="melodrama-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Green Light</p>
+                  </div>
+                  <div class="song-artist"><small>Lorde</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:55</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>17</small></div>
+                <div class="song-cover me-2"><img src="Images/mos-cover.jpg" alt="mos-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Higher Power</p>
+                  </div>
+                  <div class="song-artist"><small>Coldplay</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:27</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>18</small></div>
+                <div class="song-cover me-2"><img src="Images/speaknow-cover.jpg" alt="speak-now(taylor's version)" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Mine (Taylor's version)</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:59</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>19</small></div>
+                <div class="song-cover me-2"><img src="Images/reputation-cover.jpg" alt="reputaion-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Gorgeous</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:54</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              <div class="py-2 px-3 d-flex align-items-center queue-style bg-gradient">
+                <div class="song-number me-2"><small>20</small></div>
+                <div class="song-cover me-2"><img src="Images/1989-cover.jpg" alt="1989-cover" class="w-100"></div>
+                <div class="d-flex flex-column special-box">
+                  <div class="song-title fw-bold"><p>Wildest Dreams</p>
+                  </div>
+                  <div class="song-artist"><small>Taylor Swift</small>
+                  </div>
+                </div>
+                <div class="song-length mx-auto"><small>3:52</small></div>
+                <div class="like-icon">
+                  <i class="bi bi-heart"></i>
+              </div>
+              </div>
+              
+            </div>
+          </div>
+
+        <!-- bottom player -->
+        <div id="bottom-player">
+            <div class="bg-black text-light d-flex">
+              <div id="player-img" class="px-3"><img src="Images/1989-cover.jpg" alt="1989-cover" class="my-2">
+              </div>
+              <div class="d-flex flex-column player-name-box py-3">
+                <div class="song-title fw-bold"><p>Shake It Off</p>
+                </div>
+                <div class="song-artist"><small>Taylor Swift</small>
+                </div>
+              </div>
+              <!-- favourite -->
+                <div class="player-like">
+                  <i class="bi bi-heart"></i>
+              </div>
+              <!-- center buttons -->
+              <div id="player-center" class="d-flex flex-column align-items-center justify-content-center">
+                <div class="d-flex justify-content-center" id="player-center-icons">
+                  <div>
+                    <i class="bi bi-shuffle"></i>
+                  </div>
+                  <div>
+                    <i class="bi bi-skip-start-fill"></i>
+                  </div>
+                  <div>
+                    <i class="bi bi-pause-circle"></i>
+                  </div>
+                  <div>
+                    <i class="bi bi-skip-end-fill"></i>
+                  </div>
+                  <div>
+                    <i class="bi bi-repeat"></i>
+                  </div>
+                </div>
+
+                <div class="w-100" id="ranger">
+                  <input type="range" min="1" max="100" value="50" class="w-100 slider">
+                </div>
+
+                <div class="d-flex justify-content-between w-100">
+                  <div><small>2:44</small></div>
+                  <div><small>4:12</small></div>
+                </div>
+              </div>
+              <!-- player end buttons -->
+              <div class="d-flex align-items-center ms-auto me-auto" id="end-buttons">
+                <div><i class="bi bi-sort-up-alt"></i></div>
+                <div class="ms-auto"><i class="bi bi-volume-down-fill"></i></div>
+                <div><input type="range" min="1" max="100" value="50" class="volume-slider slider"></div>
+                <div><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+          </div>
+    </main>
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+</body>
+</html>
